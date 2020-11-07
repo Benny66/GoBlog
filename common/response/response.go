@@ -1,7 +1,7 @@
 package response
 
 import (
-	"goBlog/config/codeCfg"
+	"goBlog/config/code"
 	"strconv"
 )
 

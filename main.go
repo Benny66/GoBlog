@@ -5,7 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"goBlog/common/alarm"
 	_func "goBlog/common/func"
-	"goBlog/config/defaultCfg"
+	"goBlog/config/default"
 	"goBlog/database"
 	"goBlog/middleware/logger"
 	recover2 "goBlog/middleware/recover"
