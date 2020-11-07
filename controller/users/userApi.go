@@ -27,6 +27,7 @@ func Login(c *gin.Context) {
 }
 
 func WxLogin(c *gin.Context)  {
+
 	c.JSON(http.StatusOK, response.NewSuccessResponse(true))
 
 }

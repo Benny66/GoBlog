@@ -29,36 +29,36 @@ func (e *errorString) Error() string {
 }
 
 func New(text string) error {
-	go alarm("INFO", text, 2)
+	go alarm("info", text, 2)
 	return &errorString{text}
 }
 
 // 发邮件
 func Email(text string) error {
-	go alarm("EMAIL", text, 2)
+	go alarm("email", text, 2)
 	return &errorString{text}
 }
 
 // 发短信
 func Sms(text string) error {
-	go alarm("SMS", text, 2)
+	go alarm("sms", text, 2)
 	return &errorString{text}
 }
 
 // 发微信
 func WeChat(text string) error {
-	go alarm("WX", text, 2)
+	go alarm("wx", text, 2)
 	return &errorString{text}
 }
 
 // Panic 异常
 func Panic(text string) error {
-	go alarm("PANIC", text, 5)
+	go alarm("error", text, 5)
 	return &errorString{text}
 }
 
 func DDL(text string) error {
-	go alarm("DDL", text, 6)
+	go alarm("ddl", text, 6)
 	return &errorString{text}
 }
 
@@ -95,7 +95,7 @@ func alarm(level string, str string, skip int) {
 	errorJsonInfo := string(jsons)
 
 	var date = time.Now().Format("2006-01-02")
-	logFilePath := _func.GetAbsPath("./runtime/logs/info.log." + date + ".log")
+	logFilePath := _func.GetAbsPath("./runtime/logs/" + level + ".log." + date + ".log")
 	err := _func.IsFileExistsAndCreate(logFilePath)
 	if err != nil {
 		log.Fatal(err)

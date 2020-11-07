@@ -2,7 +2,7 @@ package database
 
 import (
 	"github.com/garyburd/redigo/redis"
-	"goBlog/config/defaultCfg"
+	redisCfg "goBlog/config/redis"
 	"time"
 )
 
@@ -11,10 +11,10 @@ var RedisPool Redis
 func init() {
 	//初始化
 	RedisPool = Redis{
-		RedisHost:     defaultCfg.Cfg.RedisHost,
-		RedisPassword: defaultCfg.Cfg.RedisPass,
-		RedisDB:       defaultCfg.Cfg.RedisDB,
-		RedisTimeout:  defaultCfg.Cfg.RedisTimeout,
+		RedisHost:     redisCfg.RedisCfg.RedisHost,
+		RedisPassword: redisCfg.RedisCfg.RedisPass,
+		RedisDB:       redisCfg.RedisCfg.RedisDB,
+		RedisTimeout:  redisCfg.RedisCfg.RedisTimeout,
 		RedisPool:     nil,
 	}
 	RedisPool.RedisPool = RedisPool.NewPool()
