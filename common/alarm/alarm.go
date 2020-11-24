@@ -95,7 +95,7 @@ func alarm(level string, str string, skip int) {
 	errorJsonInfo := string(jsons)
 
 	var date = time.Now().Format("2006-01-02")
-	logFilePath := _func.GetAbsPath("./runtime/logs/" + level + ".log." + date + ".log")
+	logFilePath := _func.GetAbsPath("./runtime/logs/" + level + "-" + date + ".log")
 	err := _func.IsFileExistsAndCreate(logFilePath)
 	if err != nil {
 		log.Fatal(err)
@@ -111,22 +111,22 @@ func alarm(level string, str string, skip int) {
 	log.SetOutput(f)
 	// 写入日志内容
 
-	if level == "EMAIL" {
+	if level == "email" {
 		// 执行发邮件
 
-	} else if level == "SMS" {
+	} else if level == "sms" {
 		// 执行发短信
 
-	} else if level == "WX" {
+	} else if level == "wx" {
 		// 执行发微信
 
-	} else if level == "INFO" {
+	} else if level == "info" {
 		log.Println(errorJsonInfo)
 
-	} else if level == "PANIC" {
+	} else if level == "error" {
 		// 执行PANIC方式
 		log.Println(errorJsonInfo)
-	} else if level == "DDL" {
+	} else if level == "ddl" {
 		//发送
 	}
 }
