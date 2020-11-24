@@ -3,7 +3,7 @@ package users
 import (
 	"github.com/gin-gonic/gin"
 	"goBlog/common/response"
-	"goBlog/config/codeCfg"
+	"goBlog/config/code"
 	"goBlog/validator/users"
 	"net/http"
 )
