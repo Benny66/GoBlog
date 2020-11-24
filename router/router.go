@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"goBlog/common/response"
-	"goBlog/config/codeCfg"
+	"goBlog/config/code"
 	"goBlog/middleware/cross"
 	"goBlog/router/users"
 	"net/http"
